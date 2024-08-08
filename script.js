@@ -64,8 +64,8 @@ function convertMnemonics() {
                 loopContent = [];
             } else if (line === 'END') {
                 if (inLoop) {
-                    setupCode.push(`  for (int i = 0; i <= ${loopCount}; i++)`);
-					setupCode.push(`  {`);
+                    setupCode.push(`  for (int i=0;i<=${loopCount};i++)`);
+		    setupCode.push(`  {`);
                     setupCode = setupCode.concat(loopContent.map(line => '   ' + convertLine(line).split('\n').join('\n    ')));
                     setupCode.push('  }');
                     inLoop = false;
